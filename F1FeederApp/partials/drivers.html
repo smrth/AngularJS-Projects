@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td style="width:30px;"><b>#</b></td>
+          <td style="width:50px;">&nbsp;</td>
+          <td style="width:150px;"><b>Name</b></td>
+          <td style="width:150px;"><b>DOB</b></td>
+          <td style="width:150px;"><b>Team</b></td>
+          <td style="width:50px;"><b>Points</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="driver in driversList | filter: searchFilter">
+            <td>{{$index + 1}}</td>
+            <td><img src="img/Flags/{{driver.Driver.nationality}}.png" /></td>
+            <td>
+            <a href="{{driver.Driver.url}}" target="_blank" >{{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}</a>
+            </td>
+            <td>{{driver.Driver.dateOfBirth | date:"MM/dd/yyyy"}}</td>
+            <td><a href="{{driver.Constructors[0].url}}" target="_balnk">{{driver.Constructors[0].name}}</a></td>
+            <td>{{driver.points}}</td>
+        </tr>
+    </tbody>
+</table>
